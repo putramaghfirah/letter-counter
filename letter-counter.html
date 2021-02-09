@@ -1,0 +1,26 @@
+<body>
+  <div id="root"></div>
+  <script src="https:/unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+    function LetterCount() {
+      const [string, setString] = React.useState('');
+      const handleCount = (event) => setString(event.target.value);
+      return (
+        <div>
+          <h1>Letter Counter</h1>
+          <input onChange={handleCount} />
+          <p>Letter Count : {string.length}</p>
+        </div>
+      );
+    }
+    ReactDOM.render(<LetterCount />, rootElement);
+  </script>
+</body>
